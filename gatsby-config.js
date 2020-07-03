@@ -1,77 +1,58 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ana Wall',
-    description:
-      'Personal website for Ana Wall',
+    title: `Ana Wall`,
+    name: `Ana Wall`,
+    siteUrl: `https://ana.mba`,
+    description: `Personal site for Ana Wall.`,
+    hero: {
+      heading: `Ana Wall. Product Management, Brand Development, Customer Experience.`,
+      maxWidth: 950,
+    },
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/anaandwall`,
+      },
+      {
+        name: `instagram`,
+        url: `https://instagram.com/anawall`,
+      },
+      {
+        name: `linkedin`,
+        url: `https://www.linkedin.com/in/anawall/`,
+      },
+    ],
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
     {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
+      resolve: "@narative/gatsby-theme-novela",
       options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
+        contentPosts: "content/posts",
+        contentAuthors: "content/authors",
+        basePath: "/",
+        authorsPage: true,
+        sources: {
+          local: true,
+          contentful: false,
+        },
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        name: `Novela by Narative`,
+        short_name: `Novela`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
+        display: `standalone`,
+        icon: `src/assets/favicon.png`,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-plugin-netlify-cms`,
       options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2048,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
-      },
-    }, // must be after other CSS plugins
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
-}
+};
