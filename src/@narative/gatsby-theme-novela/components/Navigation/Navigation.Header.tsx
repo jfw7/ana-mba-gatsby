@@ -82,7 +82,6 @@ const SharePageButton: React.FC<{}> = () => {
 };
 
 const NavigationHeader: React.FC<{}> = () => {
-  console.log('asdf');
   const [showBackArrow, setShowBackArrow] = useState<boolean>(false);
   const [previousPath, setPreviousPath] = useState<string>("/");
   const { sitePlugin } = useStaticQuery(siteQuery);
