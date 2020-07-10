@@ -25,6 +25,7 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
       - { label: "Hero", name: "hero", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Slug", name: "slug", widget: "string "}
   - name: "authors"
     label: "Authors"
     label_singular: "Author"
@@ -41,3 +42,4 @@ collections:
       - { label: Avatar, name: avatar, widget: image }
       - { label: Social, name: social, widget: list, collapsed: false, field: { label: URL, name: url, widget: string } }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Slug", name: "slug", widget: "string "}
