@@ -11,6 +11,7 @@ social:
   - url: 'https://twitter.com/anaandwall'
   - url: 'https://instagram.com/anawall'
   - url: 'https://www.linkedin.com/in/anawall/'
+slug: about
 ---
 # Heading test
 
