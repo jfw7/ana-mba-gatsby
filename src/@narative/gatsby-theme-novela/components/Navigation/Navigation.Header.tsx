@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 import { Link, navigate, graphql, useStaticQuery } from "gatsby";
 import { useColorMode } from "theme-ui";
 
+import Headings from '@components/Headings';
 import Section from "@components/Section";
-import Logo from "@components/Logo";
 
 import Icons from "@icons";
 import mediaqueries from "@styles/media";
@@ -23,6 +23,11 @@ const siteQuery = graphql`
       }
     }
   }
+`;
+
+const NavItem = styled(Headings.h2)`
+  padding: 15px;
+  font-family: ${p => p.theme.fonts.sansSerif};
 `;
 
 const DarkModeToggle: React.FC<{}> = () => {
@@ -109,26 +114,31 @@ const NavigationHeader: React.FC<{}> = () => {
   return (
     <Section>
       <NavContainer>
-        <LogoLink
+        <div style={{ display: 'flex', flexDirection: 'row'}}>
+        <Link
           to={rootPath || basePath}
           data-a11y="false"
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage"
           back={showBackArrow ? "true" : "false"}
         >
+          <NavItem>
+            Home
+          </NavItem>
           {showBackArrow && (
             <BackArrowIconContainer>
               <Icons.ChevronLeft fill={fill} />
             </BackArrowIconContainer>
           )}
-          Test
-          <Hidden>Navigate back to the homepage</Hidden>
-        </LogoLink>
-        <Link
-          to="new"
-        >
-          About
-        </Link>
+          </Link>
+          <Link
+            to="/about"
+          >
+            <NavItem>
+              About
+            </NavItem>
+          </Link>
+        </div>
         <NavControls>
           {showBackArrow ? (
             <button

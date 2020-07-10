@@ -1,4 +1,8 @@
 import React from 'react';
+import Headings from '@components/Headings';
+import styled from '@emotion/styled';
+
+const Heading = styled(Headings.h2)``;
 
 /**
  * Paste in your SVG logo and return it from this component.
@@ -7,8 +11,8 @@ import React from 'react';
  * Logo comes with a property value called `fill`. `fill` is useful
  * when you want to change your logo depending on the theme you are on.
  */
-export default function Logo({ fill }) {
-  return (
-    <div>Test</div>
-  );
-}
+export default ({ fill }) => (
+  <Heading>
+    Home
+  </Heading>
+);

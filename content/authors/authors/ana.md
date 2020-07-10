@@ -1,3 +1,4 @@
+---
 name: Ana Wall
 bio: |
   Marketing professional with demonstrated success in helping companies better
@@ -10,3 +11,10 @@ social:
   - url: https://instagram.com/anawall
   - url: https://www.linkedin.com/in/anawall/
 featured: true
+slug: about
+---
+
+# Heading test
+### Heading level 3
+
+*This* is **rich content** now!

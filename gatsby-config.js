@@ -23,6 +23,9 @@ module.exports = {
       },
     ],
   },
+  mapping: {
+    'Mdx.frontmatter.author': `Mdx`,
+  },
   plugins: [
     {
       resolve: "@narative/gatsby-theme-novela",
@@ -31,6 +34,7 @@ module.exports = {
         contentAuthors: "content/authors",
         basePath: "/",
         authorsPage: true,
+        authorsPath: "/",
         sources: {
           local: true,
           contentful: false,
