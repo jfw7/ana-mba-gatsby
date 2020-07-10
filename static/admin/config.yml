@@ -29,7 +29,6 @@ collections:
     label: "Authors"
     label_singular: "Author"
     folder: "content/authors/authors"
-    path: "{{name}}"
     identifier_field: "name"
     create: true
     delete: true
